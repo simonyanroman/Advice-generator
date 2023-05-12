@@ -116,14 +116,18 @@ p {
   text-transform: uppercase;
   letter-spacing: 0.2rem;
 }
+html {
+  height: 100%;
+}
 
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
   background-color: rgb(33, 39, 50);
+  overflow: hidden;
 }
 main {
   display: flex;
@@ -177,11 +181,6 @@ main {
   width: 2rem;
 }
 
-.dice:hover {
-  cursor: pointer;
-  box-shadow: 0 0 2rem rgb(118, 250, 177);
-}
-
 .attribution {
   display: flex;
   align-items: center;
@@ -206,5 +205,20 @@ main {
 
   .breaker img {
     content: url("images/pattern-divider-desktop.svg");
+  }
+}
+
+/* if device has a touch screen */
+@media (any-pointer: coarse) {
+  .dice {
+    box-shadow: 0 0 2rem rgb(118, 250, 177);
+  }
+}
+
+/* if device has no touch screen */
+@media (any-pointer: fine) {
+  .dice:hover {
+    cursor: pointer;
+    box-shadow: 0 0 2rem rgb(118, 250, 177);
   }
 }

@@ -18,6 +18,13 @@ async function request() {
   advice_text.textContent = `"${retrieved_advice}"`;
 }
 
+request();
+
 dice.addEventListener("click", function () {
-  console.log(request());
+  this.style.transform = "scale(.9)";
+  setTimeout(() => {
+    this.style.transform = "scale(1)";
+  }, 200);
+
+  request();
 });
