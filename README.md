@@ -47,6 +47,7 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - Mobile-first workflow
+- JavaScript animation
 
 ### What I learned
 
@@ -72,6 +73,25 @@ async function request() {
   retrieved_advice = data.slip.advice;
 }
 ```
+
+Reading information about the type of device from which the application is opened for defining specific styles depending on device type.
+```css
+/* if device has a touch screen */
+@media (any-pointer: coarse) {
+  .dice {
+    box-shadow: 0 0 2rem rgb(118, 250, 177);
+  }
+}
+
+/* if device has no touch screen */
+@media (any-pointer: fine) {
+  .dice:hover {
+    cursor: pointer;
+    box-shadow: 0 0 2rem rgb(118, 250, 177);
+  }
+}
+```
+
 
 ### Continued development
 
